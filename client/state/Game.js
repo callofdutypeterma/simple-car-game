@@ -7,7 +7,7 @@ import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 
-const SERVER_IP = 'http://35.170.242.128:8000'
+const SERVER_IP = 'http://localhost:8000'
 let socket = null
 let otherPlayers = {}
 
@@ -31,7 +31,7 @@ class Game extends Phaser.State {
       socket = io(SERVER_IP)
       // Creates the player passing the X, Y, game and socket as arguments
       //this.player = player(Math.random() * width, Math.random() * height / 2, this.game, socket)
-      this.player = player(0, 0, this.game, socket)
+      this.player = player(400, 300, this.game, socket)
       // Creates the player name text
       this.player.playerName = createText(this.game, this.player.sprite.body)
       // Creates the player speed text
