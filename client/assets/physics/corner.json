@@ -2439,4 +2439,13 @@
             "shape": [   102, 0  ,  495, 489  ,  437, 418  ]
         }
     ]
+	,
+	"obstacle": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   0, 237  ,  0, 0  ,  171, 0  ,  171, 237  ]
+        }
+    ]
 }

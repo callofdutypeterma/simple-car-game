@@ -2,7 +2,7 @@ import { WORLD_SIZE } from './../../config'
 
 const { width, height } = WORLD_SIZE
 
-var static1, static2, static3, static4, static5, static6, static7, static8, static9, static10, static12, static13, static14, corner, corner2, center, bottom, rightside
+var static1, static2, static3, static4, static5, static6, static7, static8, static9, static10, static12, static13, static14, corner, corner2, center, bottom, rightside, obstacle
 var longz
 
 const worldCreator = game => {
@@ -21,8 +21,8 @@ const worldCreator = game => {
   //  Create two static objects
   static1 = game.add.sprite(1600, 300, 'wall')
   static1.scale.setTo(1500, 1)
-  static2 = game.add.sprite(850, 500, 'wall')
-  static2.scale.setTo(1, 400)
+  static2 = game.add.sprite(850, 390, 'wall')
+  static2.scale.setTo(1, 620)
   static3 = game.add.sprite(500, 1000, 'wall')
   static3.scale.setTo(1100, 1)
   static4 = game.add.sprite(1050, 700, 'wall')
@@ -51,9 +51,10 @@ const worldCreator = game => {
   center = game.add.sprite(2800, 2100, 'center')
   bottom = game.add.sprite(3300, 3600, 'bottom')
   rightside = game.add.sprite(3700, 1100, 'rightside')
+  obstacle = game.add.sprite(4770, 3283, 'obstacle')
 
   //  Enable if for physics. This creates a default rectangular body.
-  game.physics.p2.enable([static1, static2, static3, static4, static5, static6, static7, static8, static9, static10, static12, static13, static14, corner, corner2, center, bottom, rightside]);
+  game.physics.p2.enable([static1, static2, static3, static4, static5, static6, static7, static8, static9, static10, static12, static13, static14, corner, corner2, center, bottom, rightside, obstacle]);
 
   corner.body.clearShapes();
   corner.body.loadPolygon('physicsData', 'corner')
@@ -65,26 +66,29 @@ const worldCreator = game => {
   bottom.body.loadPolygon('physicsData', 'bottom')
   rightside.body.clearShapes();
   rightside.body.loadPolygon('physicsData', 'rightside')
+  obstacle.body.clearShapes();
+  obstacle.body.loadPolygon('physicsData', 'obstacle')
 
   //  Make static
-  static1.body.static = true;
-  static2.body.static = true;
-  static3.body.static = true;
-  static4.body.static = true;
-  static5.body.static = true;
-  static6.body.static = true;
-  static7.body.static = true;
-  static8.body.static = true;
-  static9.body.static = true;
-  static10.body.static = true;
-  static12.body.static = true;
-  static13.body.static = true;
-  static14.body.static = true;
-  corner.body.static = true;
-  corner2.body.static = true;
-  center.body.static = true;
-  bottom.body.static = true;
-  rightside.body.static = true;
+  static1.body.static = true
+  static2.body.static = true
+  static3.body.static = true
+  static4.body.static = true
+  static5.body.static = true
+  static6.body.static = true
+  static7.body.static = true
+  static8.body.static = true
+  static9.body.static = true
+  static10.body.static = true
+  static12.body.static = true
+  static13.body.static = true
+  static14.body.static = true
+  corner.body.static = true
+  corner2.body.static = true
+  center.body.static = true
+  bottom.body.static = true
+  rightside.body.static = true
+  obstacle.body.static = true
 }
 
 const createMap = game => {
